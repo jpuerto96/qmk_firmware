@@ -20,13 +20,8 @@
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID 0x7170
-<<<<<<< HEAD
-#define PRODUCT_ID 0x7373
-#define DEVICE_VER 0x3000
-=======
 #define PRODUCT_ID 0x656D
 #define DEVICE_VER 0x1000
->>>>>>> upstream/master
 #define MANUFACTURER qpockets
 #define PRODUCT eggman
 
