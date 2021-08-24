@@ -68,3 +68,4 @@
    { k20, k21,   k22,   k23, k24,   k25, k26, k27, k28, k29,   k2a,   k2b }, \
    { k30, KC_NO, KC_NO, k33, KC_NO, k35, k36, k37, k38, KC_NO, KC_NO, k3b }  \
    }
+   
