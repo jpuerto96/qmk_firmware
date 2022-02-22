@@ -38,3 +38,5 @@
 
 #define ENCODERS_PAD_A { B0 }
 #define ENCODERS_PAD_B { B1 }
+
+#define SLIDER_PIN D0

@@ -3,17 +3,6 @@
 
 #include QMK_KEYBOARD_H
 
-#include "analog.h"
-int16_t max_pot_val = 1023;
-int16_t max_ticks = 20;
-int16_t pot_oldVal = 0;
-int16_t pot_val    = 0;
-bool moving     = false;
-#define POT_TOLERANCE 50
-#define POT_PIN D0
-#include "print.h"
-
-
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _BASE
