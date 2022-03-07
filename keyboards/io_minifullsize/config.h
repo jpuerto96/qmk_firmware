@@ -26,8 +26,8 @@
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS { F0, F1, C7, C6, B6, B5, B7, E6, B2, D4, D6, D7 }
-#define MATRIX_COL_PINS { D1, D2, D3, D5, B3, B4, F4, F5, F6, F7 }
+#define MATRIX_ROW_PINS { F0, F1, C7, C6, B6, B5, B7, E6, B2, D5, D6, D7 }
+#define MATRIX_COL_PINS { D0, D1, D2, D3, B3, B4, F4, F5, F6, F7 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
@@ -38,3 +38,6 @@
 
 #define ENCODERS_PAD_A { B0 }
 #define ENCODERS_PAD_B { B1 }
+
+#define POT_TOLERANCE 10
+#define POT_PIN D4

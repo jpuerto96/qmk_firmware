@@ -2,6 +2,48 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include "analog.h"
+int16_t ticks = 0;
+int16_t max_pot_val = 1023;
+int16_t max_ticks = 20;
+int16_t pot_oldVal = 0;
+int16_t pot_val    = 0;
+bool moving     = false;
+//#define POT_TOLERANCE 50
+//#define POT_PIN D4
+#include "print.h"
+
+
+void matrix_init_user(void) {
+    analogReference(ADC_REF_POWER);
+    for (int i = 0; i<max_ticks;++i){
+        tap_code(KC_VOLD);
+    }
+    ticks = 0;
+}
+
+void matrix_scan_user(void){
+    pot_val   = (analogReadPin(POT_PIN));
+
+    if (abs(pot_val - pot_oldVal) > POT_TOLERANCE) {
+        int num_ticks = ((float)pot_val/max_pot_val)*max_ticks;
+        int delta_ticks = num_ticks - ticks;
+        if (delta_ticks > 0) {
+            for (int i = 0; i<delta_ticks;++i){
+                tap_code(KC_VOLU);
+            }
+        } else {
+            for (int i = 0; i<abs(delta_ticks);++i){
+                tap_code(KC_VOLD);
+            }
+        }
+        ticks = num_ticks;
+        pot_oldVal = pot_val;
+    }
+}
+
+
+
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
